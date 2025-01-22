@@ -1,0 +1,68 @@
+[tool.poetry]
+name = "ShadowSight"
+version = "0.1.0"
+description = "A client that retrieves vulnerability observations from the The Shadowserver Foundation and pushes them to a Vulnerability-Lookup instance."
+authors = ["Cédric Bonhomme <cedric.bonhomme@circl.lu>"]
+license = "GPL-3.0-or-later"
+readme = "README.md"
+
+homepage = "https://github.com/CIRCL/ShadowSight"
+repository = "https://github.com/CIRCL/ShadowSight"
+
+
+keywords = ["Vulnerability-Lookup", "Vulnerability", "CVE", "Shadowserver"]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Security",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"
+]
+
+include = [
+    "README.md",
+    "COPYING",
+    "blueskysight/conf_sample.py",
+]
+
+
+[tool.poetry.scripts]
+ShadowSight = "shadowsight.publish:main"
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pyvulnerabilitylookup = "^2.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.mypy]
+python_version = "3.13"
+check_untyped_defs = true
+ignore_errors = false
+ignore_missing_imports = true
+strict_optional = true
+no_implicit_optional = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+warn_unreachable = true
+
+show_error_context = true
+pretty = true
+
+exclude = "build|dist|docs|blueskysight.egg-info"
+
+[tool.isort]
+profile = "black"
