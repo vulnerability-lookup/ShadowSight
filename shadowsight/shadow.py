@@ -43,7 +43,6 @@ from urllib.request import Request, urlopen
 
 from shadowsight import config
 
-
 TIMEOUT = 45
 
 
