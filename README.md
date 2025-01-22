@@ -48,7 +48,7 @@ $ ShadowSight --since 30d --limit 10 --method common
 ```
 
 
-## Example of collected sightings
+## Examples of collected sightings
 
 Sets of sightings available on Vulnerability-Lookup thanks to the Shadowserver foundation:
 
