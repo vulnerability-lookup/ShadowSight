@@ -48,6 +48,14 @@ $ ShadowSight --since 30d --limit 10 --method common
 ```
 
 
+## Example of collected sightings
+
+Sets of sightings available on Vulnerability-Lookup thanks to the Shadowserver foundation:
+
+- [sightings of type exploited](https://vulnerability.circl.lu/sightings/?query=honeypot%2Fexploited-vulnerabilities)
+- [sightings of type seen](https://vulnerability.circl.lu/sightings/?query=honeypot%2Fcommon-vulnerabilities)
+
+
 ## License
 
 [ShadowSight](https://github.com/CIRCL/ShadowSight) is licensed under
