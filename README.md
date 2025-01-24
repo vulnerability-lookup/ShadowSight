@@ -19,7 +19,7 @@ $ export SHADOWSIGHT_CONFIG=~/.ShadowSight/conf.py
 The configuration should be defined in a Python file (e.g., ``~/.ShadowSight/conf.py``).
 You must then set an environment variable (``SHADOWSIGHT_CONFIG``) with the full path to this file.
 
-You can have a look at [this example](https://github.com/CIRCL/ShadowSight/blob/main/shadowsight/conf_sample.py) of configuration.
+You can have a look at [this example](https://github.com/vulnerability-lookup/ShadowSight/blob/main/shadowsight/conf_sample.py) of configuration.
 
 
 ## Usage
@@ -58,7 +58,7 @@ Sets of sightings available on Vulnerability-Lookup thanks to the Shadowserver f
 
 ## License
 
-[ShadowSight](https://github.com/CIRCL/ShadowSight) is licensed under
+[ShadowSight](https://github.com/vulnerability-lookup/ShadowSight) is licensed under
 [GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0.html)
 
 ~~~

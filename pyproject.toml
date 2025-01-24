@@ -6,8 +6,8 @@ authors = ["Cédric Bonhomme <cedric.bonhomme@circl.lu>"]
 license = "GPL-3.0-or-later"
 readme = "README.md"
 
-homepage = "https://github.com/CIRCL/ShadowSight"
-repository = "https://github.com/CIRCL/ShadowSight"
+homepage = "https://github.com/vulnerability-lookup/ShadowSight"
+repository = "https://github.com/vulnerability-lookup/ShadowSight"
 
 
 keywords = ["Vulnerability-Lookup", "Vulnerability", "CVE", "Shadowserver"]
