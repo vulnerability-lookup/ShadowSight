@@ -1,3 +1,8 @@
+[build-system]
+requires = ["poetry-core>=2.0"]
+build-backend = "poetry.core.masonry.api"
+
+
 [project]
 name = "ShadowSight"
 version = "0.1.0"
@@ -9,7 +14,7 @@ license = "GPL-3.0-or-later"
 readme = "README.md"
 keywords = ["Vulnerability-Lookup", "Vulnerability", "CVE", "Shadowserver"]
 # classifieres is dynamic because we want to create Python classifiers automatically
-dynamic = [ "classifiers" ]
+dynamic = ["classifiers"]
 
 requires-python = "^3.10"
 dependencies = [
@@ -25,11 +30,6 @@ Changelog = "https://github.com/vulnerability-lookup/ShadowSight/blob/main/CHANG
 
 [project.scripts]
 ShadowSight = "shadowsight.publish:main"
-
-
-[build-system]
-requires = ["poetry-core>=2.0"]
-build-backend = "poetry.core.masonry.api"
 
 
 [tool.poetry]
@@ -68,7 +68,7 @@ warn_unreachable = true
 show_error_context = true
 pretty = true
 
-exclude = "build|dist|docs|blueskysight.egg-info"
+exclude = "build|dist|docs"
 
 [tool.isort]
 profile = "black"
