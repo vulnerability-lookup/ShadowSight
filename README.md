@@ -3,7 +3,7 @@
 A client to gather vulnerability-related information from the
 [Shadowserver Foundation](https://www.shadowserver.org).
 The collected data is then sent to the
-[Vulnerability-Lookup](https://github.com/cve-search/vulnerability-lookup) API as sightings.
+[Vulnerability-Lookup](https://github.com/vulnerability-lookup/vulnerability-lookup) API as sightings.
 
 
 ## Installation
