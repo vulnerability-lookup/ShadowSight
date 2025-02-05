@@ -7,7 +7,7 @@ def push_sighting_to_vulnerability_lookup(
     sighting_type, source, day, vulnerability_ids
 ):
     """Create a sighting from an incoming status and push it to the Vulnerability Lookup instance."""
-    print("Pushing sighting to Vulnerability Lookup…")
+    print("Pushing sighting to Vulnerability-Lookup…")
     vuln_lookup = PyVulnerabilityLookup(
         config.vulnerability_lookup_base_url, token=config.vulnerability_auth_token
     )
