@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "ShadowSight"
-version = "0.1.0"
+version = "1.0.0"
 description = "A client that retrieves vulnerability observations from the The Shadowserver Foundation and pushes them to a Vulnerability-Lookup instance."
 authors = [
     {name = "Cédric Bonhomme", email = "cedric.bonhomme@circl.lu"}
@@ -18,7 +18,8 @@ dynamic = ["classifiers"]
 
 requires-python = ">=3.10,<4.0"
 dependencies = [
-    "pyvulnerabilitylookup (>=2.2.0)"
+    "pyvulnerabilitylookup (>=2.2.0)",
+    "valkey (>=6.1.0,<7.0.0)"
 ]
 
 

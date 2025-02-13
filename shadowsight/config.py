@@ -43,3 +43,12 @@ try:
     shadow_uri = conf.uri
 except AttributeError:
     raise Exception("Missing configuration variable.")
+
+
+try:
+    heartbeat_enabled = True
+    valkey_host = conf.valkey_host
+    valkey_port = conf.valkey_port
+    expiration_period = conf.expiration_period
+except Exception:
+    heartbeat_enabled = False

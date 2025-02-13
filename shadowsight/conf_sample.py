@@ -22,3 +22,10 @@ vulnerability_patterns = re.compile(
 key = ""
 secret = ""
 uri = "https://transform.shadowserver.org/api2/"
+
+
+# Hearbeat mechanism
+heartbeat_enabled = True
+valkey_host = "127.0.0.1"
+valkey_port = 10002
+expiration_period = 93600  # 26 hours

@@ -7,7 +7,9 @@ from zoneinfo import ZoneInfo
 from shadowsight.shadow import api_call
 from shadowsight.utils import (
     extract_vulnerability_ids,
+    heartbeat,
     push_sighting_to_vulnerability_lookup,
+    report_error,
 )
 
 
@@ -20,12 +22,21 @@ def honeypot_exploited_vulnerabilities(day, limit):
         query = {"date": f"{formatted_day}"}
 
     # Query the Shadowserver API
-    response = api_call("honeypot/exploited-vulnerabilities", query)
+    try:
+        response = api_call("honeypot/exploited-vulnerabilities", query)
+    except Exception:
+        report_error(
+            "error", "honeypot_exploited_vulnerabilities: Error from Shadowserver API."
+        )
+        return
 
     # Decode the bytes to a string and split by newline
     try:
         lines = response.decode("utf-8").strip().split("\n")
     except Exception:
+        report_error(
+            "error", "honeypot_exploited_vulnerabilities: Failed to decode response."
+        )
         return
 
     # Convert each JSON object to a Python dictionary
@@ -55,12 +66,21 @@ def honeypot_common_vulnerabilities(day, limit):
         query = {"date": f"{formatted_day}"}
 
     # Query the Shadowserver API
-    response = api_call("honeypot/common-vulnerabilities", query)
+    try:
+        response = api_call("honeypot/common-vulnerabilities", query)
+    except Exception:
+        report_error(
+            "error", "honeypot_common_vulnerabilities: Error from Shadowserver API."
+        )
+        return
 
     # Decode the bytes to a string and split by newline
     try:
         lines = response.decode("utf-8").strip().split("\n")
     except Exception:
+        report_error(
+            "error", "honeypot_common_vulnerabilities: Failed to decode response."
+        )
         return
 
     # Convert each JSON object to a Python dictionary
@@ -84,7 +104,7 @@ def honeypot_common_vulnerabilities(day, limit):
 def main():
     parser = argparse.ArgumentParser(
         prog="ShadowSight",
-        description="ShadowSight Query Script",
+        description="A client that retrieves vulnerability observations from the The Shadowserver Foundation and pushes them to a Vulnerability-Lookup instance.",
     )
     parser.add_argument(
         "--method",
@@ -106,6 +126,9 @@ def main():
         help="Limit number of results.",
     )
     args = parser.parse_args()
+
+    # Sends a heartbeat when the script launches
+    heartbeat()
 
     today = datetime.now(tz=ZoneInfo("UTC")).replace(
         hour=0, minute=0, second=0, microsecond=0
