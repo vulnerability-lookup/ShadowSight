@@ -144,21 +144,21 @@ all = ["flake8 (>=7.1.1)", "mypy (>=1.11.2)", "pytest (>=8.3.2)", "ruff (>=0.6.2
 
 [[package]]
 name = "pyvulnerabilitylookup"
-version = "2.2.0"
+version = "2.5.0"
 description = "Python CLI and module for Vulnerability Lookup"
 optional = false
-python-versions = "<4.0,>=3.10"
+python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "pyvulnerabilitylookup-2.2.0-py3-none-any.whl", hash = "sha256:27acef0e4fb1fad301c1a4c403de0fe6f06dcd2d12234eb2f63d2f737a7475a7"},
-    {file = "pyvulnerabilitylookup-2.2.0.tar.gz", hash = "sha256:cdf56157cf9df013e2131ed3c03029e9e9be9211d4cf4097b2999448b6d6fec3"},
+    {file = "pyvulnerabilitylookup-2.5.0-py3-none-any.whl", hash = "sha256:abbb0fdc0ffd66f1debb2d1e4f70ad6747a65d92f6b3550bea2f0495fc258032"},
+    {file = "pyvulnerabilitylookup-2.5.0.tar.gz", hash = "sha256:45cd9182c5c93c869ea5a9a85b5f39aa565c5862703dbeeb8239eaa08b71ba75"},
 ]
 
 [package.dependencies]
-requests = ">=2.32.3,<3.0.0"
+requests = ">=2.32.3"
 
 [package.extras]
-docs = ["Sphinx (>=8.1.3,<9.0.0)"]
+docs = ["Sphinx (>=8.1.3)"]
 
 [[package]]
 name = "requests"

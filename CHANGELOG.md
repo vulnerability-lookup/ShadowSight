@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.0.1 (2025-02-17)
+
+Minor improvement to the logging mechanism.
+
+
 ## Release 1.0.0 (2025-02-13)
 
 This release introduces the capability to report errors, warnings,

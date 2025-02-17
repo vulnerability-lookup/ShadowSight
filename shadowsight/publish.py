@@ -4,12 +4,11 @@ import sys
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
+from shadowsight.monitoring import log, heartbeat
 from shadowsight.shadow import api_call
 from shadowsight.utils import (
     extract_vulnerability_ids,
-    heartbeat,
     push_sighting_to_vulnerability_lookup,
-    report_error,
 )
 
 
@@ -25,18 +24,14 @@ def honeypot_exploited_vulnerabilities(day, limit):
     try:
         response = api_call("honeypot/exploited-vulnerabilities", query)
     except Exception:
-        report_error(
-            "error", "honeypot_exploited_vulnerabilities: Error from Shadowserver API."
-        )
+        log("error", "honeypot_exploited_vulnerabilities: Error from Shadowserver API.")
         return
 
     # Decode the bytes to a string and split by newline
     try:
         lines = response.decode("utf-8").strip().split("\n")
     except Exception:
-        report_error(
-            "error", "honeypot_exploited_vulnerabilities: Failed to decode response."
-        )
+        log("error", "honeypot_exploited_vulnerabilities: Failed to decode response.")
         return
 
     # Convert each JSON object to a Python dictionary
@@ -69,18 +64,14 @@ def honeypot_common_vulnerabilities(day, limit):
     try:
         response = api_call("honeypot/common-vulnerabilities", query)
     except Exception:
-        report_error(
-            "error", "honeypot_common_vulnerabilities: Error from Shadowserver API."
-        )
+        log("error", "honeypot_common_vulnerabilities: Error from Shadowserver API.")
         return
 
     # Decode the bytes to a string and split by newline
     try:
         lines = response.decode("utf-8").strip().split("\n")
     except Exception:
-        report_error(
-            "error", "honeypot_common_vulnerabilities: Failed to decode response."
-        )
+        log("error", "honeypot_common_vulnerabilities: Failed to decode response.")
         return
 
     # Convert each JSON object to a Python dictionary
@@ -127,6 +118,9 @@ def main():
     )
     args = parser.parse_args()
 
+    # Log the launch of the script
+    log("info", "Starting ShadowSight…")
+
     # Sends a heartbeat when the script launches
     heartbeat()
 
@@ -163,6 +157,9 @@ def main():
 
         # Increment since_date by one day
         since_date += timedelta(days=1)
+
+    # Log the end of the script
+    log("info", "ShadowSight execution completed.")
 
 
 if __name__ == "__main__":
