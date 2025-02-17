@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "ShadowSight"
-version = "1.0.1"
+version = "1.0.2"
 description = "A client that retrieves vulnerability observations from the The Shadowserver Foundation and pushes them to a Vulnerability-Lookup instance."
 authors = [
     {name = "Cédric Bonhomme", email = "cedric.bonhomme@circl.lu"}
