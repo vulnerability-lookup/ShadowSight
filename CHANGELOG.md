@@ -2,7 +2,7 @@
 
 ## Release 1.0.1 (2025-02-17)
 
-Minor improvement to the logging mechanism.
+Minor improvements to the logging mechanism.
 
 
 ## Release 1.0.0 (2025-02-13)
