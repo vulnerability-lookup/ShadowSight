@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.0.2 (2025-02-17)
+
+Added monitoring module.
+
+
 ## Release 1.0.1 (2025-02-17)
 
 Minor improvements to the logging mechanism.
