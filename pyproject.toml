@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "ShadowSight"
-version = "1.0.2"
+version = "1.0.3"
 description = "A client that retrieves vulnerability observations from the The Shadowserver Foundation and pushes them to a Vulnerability-Lookup instance."
 authors = [
     {name = "Cédric Bonhomme", email = "cedric.bonhomme@circl.lu"}
@@ -13,7 +13,7 @@ authors = [
 license = "GPL-3.0-or-later"
 readme = "README.md"
 keywords = ["Vulnerability-Lookup", "Vulnerability", "CVE", "Shadowserver"]
-# classifieres is dynamic because we want to create Python classifiers automatically
+
 dynamic = ["classifiers"]
 
 requires-python = ">=3.10,<4.0"
@@ -45,6 +45,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"
 ]
 include = [
